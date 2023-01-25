@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block title %}Index{% endblock title %}
+
+{% block link_css %}<link rel="stylesheet" href="{% static '/css/main.css' %}">{% endblock link_css %}
+
+
+{% block body %}
+{% include "components/splash.html" %}
+
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col-6 mt-3 mb-3">
+
+            {% for post in posts %}
+                <a href="" class="text-decoration-none">
+                    <div class="card pb-3 pt-3 mt-4 mb-4">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="pb-3 text-body">{{post.author}}</div>
+                                <div class="pb-3 text-body">{{post.title}}</div>
+                            </div>
+                            <div class="col-4">b</div>
+                            
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+
+        </div>
+        <div class="col-6">b</div>
+    </div>
+</div>
+
+
+
+
+{% endblock body %}
+
+
+
+
