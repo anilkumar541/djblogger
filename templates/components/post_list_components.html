@@ -1,0 +1,69 @@
+{% for post in posts %}
+<a href="" class="text-decoration-none">
+
+{% if forloop.last %}
+
+<div class="card pb-3 pt-3 mt-4 mb-4" hx-trigger="revealed" hx-get="{% url 'home_view' %}">
+
+{% else %}
+
+<div class="card pb-3 pt-3 mt-4 mb-4">
+
+{% endif %}
+
+        
+            <div class="row">
+                <div class="col-8 ">
+                        <div class="cord-body">
+                        <div class=" text-body">{{post.author}}</div>
+                        <h1 class=" text-body fs-6 fw-bold">{{post.title|truncatechars:20}}</h1>
+                        <h2 class=" text-muted d-none d-sm-block">{{post.sub_title}}</h2>
+                        <div class=" text-muted">{{post.updated_at}}</div>
+                        
+                        </div>      
+                </div>
+                <div class="col-4">
+                    <img class="img-fluid float-end rounded px-1" src="https://picsum.photos/200/250" alt="" srcset="">
+                </div>
+                
+            </div>
+        </div>
+    </a>
+{% endfor %}
+
+
+
+
+
+
+
+{% for post in posts %}
+
+<a href="" class="text-decoration-none">
+
+{% if forloop.last %}
+<div class="card pb-3 pt-3 mt-4 mb-4"  hx-get="{% url 'home_view' %}" hx-trigger="revealed">
+
+{% else %}
+
+<div class="card pb-3 pt-3 mt-4 mb-4">
+    {% endif %}
+        
+            <div class="row">
+                <div class="col-8 ">
+                        <div class="cord-body">
+                        <div class=" text-body">{{post.author}}</div>
+                        <h1 class=" text-body fs-6 fw-bold">{{post.title|truncatechars:20}}</h1>
+                        <h2 class=" text-muted d-none d-sm-block">{{post.sub_title}}</h2>
+                        <div class=" text-muted">{{post.updated_at}}</div>
+                        
+                        </div>      
+                </div>
+                <div class="col-4">
+                    <img class="img-fluid float-end rounded px-1" src="https://picsum.photos/200/250" alt="" srcset="">
+                </div>
+                
+            </div>
+        </div>
+    </a>
+{% endfor %}
